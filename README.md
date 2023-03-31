@@ -1,3 +1,8 @@
+# Extra information on this modification
+
+This modification of Kepler works on v9 and **only** on the custom client files as provided in my [client file repository](https://github.com/StargazerDevelopments/Habbo-Client-V9).<br>
+Trying to get this to work with non-modified client files will **not** work!
+
 # Kepler
 
 Kepler is a Habbo Hotel emulator that is designed to fully emulate the v14 version from 2007 era. 
