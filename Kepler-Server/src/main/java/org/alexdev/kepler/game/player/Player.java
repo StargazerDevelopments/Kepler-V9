@@ -1,7 +1,6 @@
 package org.alexdev.kepler.game.player;
 
 import io.netty.util.AttributeKey;
-import org.alexdev.kepler.Kepler;
 import org.alexdev.kepler.dao.mysql.PlayerDao;
 import org.alexdev.kepler.dao.mysql.SettingsDao;
 import org.alexdev.kepler.game.GameScheduler;
@@ -25,6 +24,7 @@ import org.alexdev.kepler.messages.outgoing.user.HOTEL_LOGOUT.LogoutReason;
 import org.alexdev.kepler.messages.types.MessageComposer;
 import org.alexdev.kepler.server.netty.NettyPlayerNetwork;
 import org.alexdev.kepler.util.config.GameConfiguration;
+import org.alexdev.kepler.util.security.RC4;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -49,6 +49,7 @@ public class Player extends Entity {
     private boolean loggedIn;
     private boolean disconnected;
     private boolean pingOK;
+    private RC4 encryption;
 
     public Player(NettyPlayerNetwork nettyPlayerNetwork) {
         this.network = nettyPlayerNetwork;
@@ -321,6 +322,14 @@ public class Player extends Entity {
 
     public Set<String> getIgnoredList() {
         return ignoredList;
+    }
+
+    public RC4 getEncryption() {
+        return encryption;
+    }
+
+    public void setEncryption(RC4 encryption) {
+        this.encryption = encryption;
     }
 
     /*public int getVersion() {

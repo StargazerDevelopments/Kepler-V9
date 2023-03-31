@@ -13,15 +13,14 @@ public class USER_OBJECT extends MessageComposer {
 
     @Override
     public void compose(NettyResponse response) {
-        response.writeString(this.details.getId());
-        response.writeString(this.details.getName());
-        response.writeString(this.details.getFigure());
-        response.writeString(this.details.getSex());
-        response.writeString(this.details.getMotto());
-        response.writeInt(this.details.getTickets());
-        response.writeString(this.details.getPoolFigure());
-        response.writeInt(this.details.getFilm());
-        response.writeBool(this.details.isReceiveNews());
+        response.writeValue("name", details.getName());
+        response.writeValue("figure", details.getFigure());
+        response.writeValue("sex", details.getSex());
+        response.writeValue("customData", details.getMotto());
+        response.writeValue("ph_tickets", details.getTickets());
+        response.writeValue("photo_film", details.getFilm());
+        response.writeValue("ph_figure", details.getPoolFigure());
+        response.writeValue("directMail", 0);
     }
 
     @Override

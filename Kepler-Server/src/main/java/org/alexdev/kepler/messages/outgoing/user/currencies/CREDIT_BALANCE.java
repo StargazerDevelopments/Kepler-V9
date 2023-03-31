@@ -14,7 +14,7 @@ public class CREDIT_BALANCE extends MessageComposer {
 
     @Override
     public void compose(NettyResponse response) {
-        response.writeString(this.details.getCredits() + ".0");
+        response.writeInt(this.details.getCredits());
     }
 
     @Override
