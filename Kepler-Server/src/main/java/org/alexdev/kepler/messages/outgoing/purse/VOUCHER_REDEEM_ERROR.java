@@ -29,17 +29,7 @@ public class VOUCHER_REDEEM_ERROR extends MessageComposer {
 
     @Override
     public void compose(NettyResponse response) {
-        // if ERROR = 213 then
-        //   me.getInterface().setVoucherInput(1)
-        //   tDelim = the itemDelimiter
-        //   the itemDelimiter = "\t"
-        //   -- UNK_B0 257
-        //   tErrorCode = 1.getPropRef().getProp(#item, 1)
-        //   the itemDelimiter = tDelim
-        //   -- UNK_65 1
-        //   return(executeMessage(#alert, [#Msg:"purse_vouchers_error" & tErrorCode]))
-        // end if
-        response.write(this.error.getErrorCode());
+        response.writeInt(this.error.getErrorCode());
     }
 
     @Override
