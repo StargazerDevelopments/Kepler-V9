@@ -6,7 +6,7 @@ import org.alexdev.kepler.server.netty.streams.NettyResponse;
 public class ROOM_INTEREST extends MessageComposer {
     @Override
     public void compose(NettyResponse response) {
-        response.writeInt(0);
+
     }
 
     @Override
