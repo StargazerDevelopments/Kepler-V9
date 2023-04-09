@@ -12,6 +12,6 @@ public class GET_SESSION_PARAMETERS implements MessageEvent {
             return;
         }
 
-        player.send(new SESSION_PARAMETERS(player.getDetails()));
+        player.send(new SESSION_PARAMETERS());
     }
 }
